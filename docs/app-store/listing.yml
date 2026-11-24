@@ -1,0 +1,85 @@
+# Composer's whole App Store listing in one file: the text App Store Connect shows,
+# the categories, and the App Review contact and notes. fastlane/Fastfile reads it
+# and pushes it with every release, so App Store Connect always matches this file.
+# Screenshots are the one thing elsewhere: screenshots/en-US/.
+#
+# Limits are Apple's; the Fastfile refuses to upload anything longer.
+
+locale: en-US
+
+name: "Composer: Music Theory"         # 30, unique across the whole store
+subtitle: "Chords, rhythm, scales, MIDI"   # 30
+
+# 170. Can change any time without a new build or review.
+promotional_text: "Generate chord progressions, shape syncopated rhythms, explore scales and the circle of fifths, train your ear, and export it all as MIDI."
+
+# 4000
+description: |
+  Composer is a music theory workbench and sketchpad for the Mac. Learn how harmony and rhythm work, hear every idea as you go, and take what you make into your DAW as a MIDI file.
+
+  CHORD PROGRESSIONS
+  • Pick a key and mode, choose a length, and generate a progression
+  • Styles from functional harmony and pop loops to jazz ii–V–I chains
+  • Seventh chords, inversions, borrowed chords and secondary dominants
+  • Lock the chords you like and re-roll the rest
+  • Roman numerals, chord symbols and note names for every chord
+
+  RHYTHM AND SYNCOPATION
+  • Time signatures from 4/4 to 7/8, swing, and a syncopation slider
+  • Edit the step grid with accents and ties, or start from a classic groove: tresillo, clave, bossa, habanera and more
+
+  MIDI EXPORT
+  • Export chord, bass and arpeggio tracks as a Standard MIDI File
+  • Your rhythm pattern, tempo and time signature come along, with optional humanized timing
+
+  EXPLORE AND LEARN
+  • Circle of Fifths: click any key to see its signature, neighbors and diatonic chords
+  • Scales and modes: 14 scales on any root, with every mode of the parent scale side by side
+  • Chord dictionary: 21 chord types on any root, with formulas and every inversion
+  • A playable piano you can use with the mouse or your keyboard
+  • Reference cards and a glossary covering harmony, cadences, rhythm and song form
+
+  PRACTICE
+  • Ear training for intervals, chord qualities, cadences and scale degrees
+  • A metronome with tap tempo and subdivisions
+  • A polyrhythm wheel for hearing 3 against 4, 5 against 7 and more
+
+  Everything plays through the built-in General MIDI sounds on your Mac. No account, no tracking, and nothing leaves your Mac.
+
+# 100, comma separated, no spaces needed
+keywords: "chords,progression,midi,music theory,scales,rhythm,ear training,metronome,piano,songwriting"
+
+# "What's New" for this version. 4000
+release_notes: |
+  Composer's first release on the Mac App Store.
+
+support_url: https://perfectink.org/apps/composer.html
+marketing_url: https://perfectink.org/apps/composer.html
+privacy_url: https://github.com/perfect-ink/composer/blob/main/docs/PRIVACY.md
+
+copyright: "2026 Perfect Ink"
+primary_category: MUSIC
+secondary_category: EDUCATION
+
+# App Review Information. Leave phone blank and set the APP_REVIEW_PHONE
+# repository secret instead (it wins over this field).
+review:
+  first_name: Felix
+  last_name: Dantoni
+  email: hello@perfectink.org
+  phone: ""
+  demo_required: false   # no sign-in, so no demo account
+  notes: |
+    Composer is a music theory and composition app. It needs no permissions, no account and no network access.
+
+    HOW TO TEST
+    1. Chord Progressions is selected at launch. Click Generate, then Play to hear the progression.
+    2. Under MIDI Export, click "Export .mid…" and save the file anywhere. This is the only place Composer writes a file, through the standard save panel.
+    3. In the sidebar, open Circle of Fifths and click a key, then Scales & Modes and Chord Dictionary.
+    4. Open Piano and press the A to L keys on your keyboard to play notes.
+    5. Open Ear Training and answer a few questions.
+
+    ABOUT THE BUILD
+    The app is sandboxed with one entitlement: read/write access to files the user picks in the save panel. Sound comes from the General MIDI sound bank built into macOS. No data is collected. Purchases: none.
+
+    Contact for questions during review: hello@perfectink.org

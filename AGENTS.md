@@ -4,11 +4,12 @@ Composer is a native SwiftUI macOS app for learning music theory and sketching m
 
 ## Commands
 
-Requires Xcode 15+ and XcodeGen (`brew install xcodegen`). There is no Makefile yet.
+Requires Xcode 15+. `make setup` installs XcodeGen if it's missing.
 
-- `xcodegen generate`: write `Composer.xcodeproj` from `project.yml` (the project is git-ignored).
-- `xcodebuild -project Composer.xcodeproj -scheme Composer -configuration Debug build`: headless build.
-- `open Composer.xcodeproj`, then ⌘R, to run.
+- `make` (`make setup dev`): generate `Composer.xcodeproj` from `project.yml` (the project is git-ignored), build Debug into `build/`, and open it.
+- `make build`: Release build. `make install` / `make uninstall` / `make reinstall` / `make install-open`: manage `/Applications`.
+- `make open` / `make close` / `make clean`; `make help` lists everything.
+- `make appstore`, `make metadata VERSION=…`, `make submit VERSION=…`: the Mac App Store build and listing (see `docs/app-store/README.md`).
 
 There is no test target yet.
 
@@ -31,7 +32,6 @@ Follow the [design principles](docs/rules/design-principles.md) for any UI work.
 
 ## After changing code
 
-1. `xcodegen generate`
-2. `xcodebuild -project Composer.xcodeproj -scheme Composer -configuration Debug build`
+1. `make dev`
 
 Commit messages are one short, imperative line, like the existing history.
